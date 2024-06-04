@@ -1,12 +1,10 @@
 import datetime
-
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import requests
 import seaborn as sns
 import urllib3
-
 import login as login
 
 

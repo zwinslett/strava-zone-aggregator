@@ -75,7 +75,7 @@ payload = {
 }
 ```
 
-## Image Examples
+## Chart Examples
 
 ![](imgs/heart_rate_pie.png)
 ![](imgs/pace_pie.png)
