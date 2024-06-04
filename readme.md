@@ -30,6 +30,31 @@ In order to run this program, you'll need:
 - A personal API application on that Strava account.
     - and the corresponding `client_id`, `client_secret` and `refresh_token` for that API application.
 
+Use your Python IDE of choice to run this program. The requirements.txt file contains the list of dependencies. If running from the terminal, the following commands should work when run from the root directory. You will receive a table as output and the charts will be saved in the `/imgs` directory: 
+
+````
+python -m pip install -r requirements.txt
+````
+
+````
+python main.py
+````
+Example output:
+````
+       score  type  resource_state  sensor_based          id  zones_sum  > 10:31  10:31-09:03  09:03-08:08  08:08-07:37  07:37-07:09  < 07:09
+0          3  pace               3             1 11559587973       7388     5850          221          910          277          130        0
+1          7  pace               3             1 11536284589       2449      259          809          399          492          309      181
+2          3  pace               3             1 11528337526       3082     2962          120            0            0            0        0
+3          3  pace               3             1 11520275269       3028     2729          267           32            0            0        0
+Total    NaN   NaN             NaN           NaN         NaN      15947    11800         1417         1341          769          439      181
+       score       type  resource_state  sensor_based  points  custom_zones          id  zones_sum  0 - 124  124 - 154  154 - 169  169 - 185  185+
+0        193  heartrate               3             1      44             0 11559587973       7388       59       4456       1185       1404   284
+1        136  heartrate               3             1     112             0 11536284589       2449       35        230        158       1628   398
+2         39  heartrate               3             1       0             0 11528337526       3082       51       2750        281          0     0
+3         45  heartrate               3             1       0             0 11520275269       3028       18       2091        919          0     0
+Total    NaN        NaN             NaN           NaN     NaN           NaN         NaN      15947      163       9527       2543       3032   682
+````
+
 Below instructions are provided for creating a personal API application and retrieving the necessary values to run this
 program. Please note that, in the settings for your personal API application, you will find a refresh token; however,
 that is not a substitute for the steps below describing how to retrieve a refresh token for use by this program. The
