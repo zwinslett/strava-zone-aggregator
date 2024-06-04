@@ -1,10 +1,12 @@
 import datetime
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import requests
 import seaborn as sns
 import urllib3
+
 import login as login
 
 
@@ -37,8 +39,6 @@ def get_activities(header, before, after, page):
     # create an empty array to store our combined pages of data in
     data = []
     while new_results:
-        # Give some feedback
-        print(f'You are requesting page {page} of your activities data ...')
         # request a page + 200 results
         get_strava = requests.get('https://www.strava.com/api/v3/activities', headers=header, params={'per_page': 200,
                                                                                                       'page': f'{page}',
@@ -46,10 +46,16 @@ def get_activities(header, before, after, page):
                                                                                                       'after': after}).json()
         # save the response to new_results to check if its empty or not and close the loop
         new_results = get_strava
-        # add our responses to the data array
-        data.extend(get_strava)
-        # increment the page
-        page += 1
+
+        if not get_strava:
+            break
+        else:
+            # add our responses to the data array
+            data.extend(get_strava)
+            # Give some feedback
+            print(f'You are requesting page {page} of your activities data ...')
+            # increment the page
+            page += 1
     # return the combine results of our get requests
     return data
 
