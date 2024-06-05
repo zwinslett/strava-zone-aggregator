@@ -22,8 +22,8 @@ def get_token():
     }
 
     print('Requesting Token...\n')
-    res = requests.post('https://www.strava.com/oauth/token', data=payload, verify=False)
-    access_token = res.json()['access_token']
+    token_object = requests.post('https://www.strava.com/oauth/token', data=payload, verify=False)
+    access_token = token_object.json()['access_token']
 
     header = {'Authorization': 'Bearer ' + access_token}
     return header
@@ -61,8 +61,8 @@ def get_activities(header, before, after, page):
 
 
 # Fetches the zones for a given activity id.
-def get_zones(id, header):
-    data = requests.get(f'https://www.strava.com/api/v3/activities/{id}/zones', headers=header).json()
+def get_zones(activity_id, header):
+    data = requests.get(f'https://www.strava.com/api/v3/activities/{activity_id}/zones', headers=header).json()
     return data
 
 

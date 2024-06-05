@@ -9,9 +9,10 @@ that was spent in each zone during the date range.
 
 ## Some notes about this program
 
-- Strava's API has the following rate limits:
+- Strava's API has the following rate limits (as of 06/04/2024):
     - **Overall Rate Limits:** 200 requests every 15 minutes, 2,000 daily
     - **Read Rate Limits:** 100 requests every 15 minutes, 1,000 daily
+- You can check your usage stats in your [API Application dashboard]('https://www.strava.com/settings/api).
 - With those rate limits in mind, you'll want to be mindful of the date range you set for your activities. You could
   easily run into the rate limit because this program makes an API call for each activity. My suggested usage of this
   tool is to see how you're trending weekly or monthly.
