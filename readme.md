@@ -7,6 +7,8 @@ zones during that range.
 The outputs are two pie charts (of which there are examples of below) that visualize the amount of time in percentages
 that was spent in each zone during the date range.
 
+This improves upon Strava's native visualization because they do not (yet!) support tracking and visualizing zones over a period of time. This missing feature undermines the greatest benefits of zone training by making it difficult to track your level of effort over time, i.e., there's no way to see if you've followed an 80-20 split for example if that's your goal.  
+
 ## Some notes about this program
 
 - Strava's API has the following rate limits (as of 06/04/2024):
