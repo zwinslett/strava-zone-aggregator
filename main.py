@@ -146,9 +146,11 @@ after_timestamp = get_timestamp(after_date)
 activities = get_activities(header, before_timestamp, after_timestamp, 1)
 
 activity_ids = []
-# For each object in activities retrieve the value of the id field and store it in the activity_ids array.
+# For each object in activities where sport_type=run retrieve the value of the id field and store it in the
+# activity_ids array.
 for item in activities:
-    activity_ids.append(item['id'])
+    if item['sport_type'] == 'Run':
+        activity_ids.append(item['id'])
 
 pace_zones = []
 heart_zones = []
